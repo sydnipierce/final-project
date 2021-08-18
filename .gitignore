@@ -1,5 +1,5 @@
 # For API keys or connections to db, uncomment these files as needed
-# config.py
+config.py
 # config.js
 
 # Byte-compiled / optimized / DLL files
