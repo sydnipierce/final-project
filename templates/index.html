@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Fake News Predictor</title>
+
+    <!-- Bring in Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+
+</head>
+
+<body>
+    <!-- Navigation bar at the top of the page -->
+    <div class="navigation">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- This is the title of the site that also takes you back to the landing page when clicked. -->
+            <a class="navbar-brand" style="background-color: #0BADA6;" >Fake News Predictor</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+
+        </nav>
+
+    </div>
+    
+
+
+    <div class="container">
+        <div class="container_intro">
+            <h2> <br> Welcome to the Fake News Predictor!</h2>
+            <p>This page uses a machine learning algorithm trained with the ISOT Fake News dataset to allow you to predict whether any article you paste in the form below is real or fake. Paste the [title/text] of the article of your choosing into the text field and click "Predict". The page also displays a word cloud of...
+            </p>
+            
+        </div>
+
+        <div class="row">
+            <!-- This box shows the word cloud. -->
+            <div class="col-12 col-md-8">
+
+                <div class="box" >
+                    <h3 class="title">Word Cloud</h3>
+                    <hr>
+                    <div id="wordcloud" class="float w-100" ></div>
+                </div>
+
+            </div>
+            <!-- This is the sidebar that contains the predictor elements. -->
+            <div class="col-12 col-md-2">
+
+                <div class="box">
+                    <h5 class="title">Predictor</h5>
+                    <hr>
+                    <input><br>
+                    <p>The article is:</p>
+                    <div class="results"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+     <!-- Link to CSS -->
+     <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Our JS -->
+    
+    <script type="text/javascript" src="/static/js/config.js"></script>
+
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
