@@ -14,7 +14,8 @@ def home():
     loaded_model = pickle.load(open(model, 'rb'))
 
     if request.method == "POST":
-        result = loaded_model.score(X_test, Y_test)
+        user_input = 
+        result = loaded_model.score(user_input)
         print(result)
 
     return render_template("index.html", results=result)
