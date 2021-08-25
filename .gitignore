@@ -1,7 +1,7 @@
 # For API keys or connections to db, uncomment these files as needed
 config.py
 # config.js
-
+pickle_model.sav
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
