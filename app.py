@@ -4,17 +4,19 @@ import os
 import numpy as np
 import pandas as pd
 from urllib.request import urlopen
-# import cloudpickle as cp
+import cloudpickle as cp
 
 # from wordcloud import WordCloud
 # methods=["GET", "POST"]
 
 app = Flask(__name__)
-from urllib.request import urlopen
-from sklearn.externals import joblib
-Nu_SVC_classifier = joblib.load(urlopen("https://butlerunit22.s3.us-east-2.amazonaws.com/class_model.sav"))
+# from urllib.request import urlopen
+# import joblib
+# model = joblib.load(urlopen("https://drive.google.com/file/d/1y03andRphelw4zxhIswwIkjDyEu6T8um/view?usp=sharing"))
 # loaded_model = cp.load(urlopen("https://butlerunit22.s3.us-east-2.amazonaws.com/class_model.sav", 'rb'))
-
+#loaded_model = cp.load('pickle_model.sav')
+with open('pickle_model.sav', mode='rb') as file:
+   model = cp.load(file)
 
 @app.route('/')
 def home():
@@ -33,7 +35,7 @@ def submit():
         user_input.append(text_input)
         print(user_input)
         # result = user_input
-        result = Nu_SVC_classifier.predict(user_input)
+        result = model.predict(user_input)
         print(result)
 
     return render_template("index.html")
