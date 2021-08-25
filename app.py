@@ -14,10 +14,11 @@ app = Flask(__name__)
 # import joblib
 # model = joblib.load(urlopen("https://drive.google.com/file/d/1y03andRphelw4zxhIswwIkjDyEu6T8um/view?usp=sharing"))
 
+#loaded_model = cp.load('pickle_model.sav')
+
 # model = cp.load(urlopen("https://butlerunit22.s3.us-east-2.amazonaws.com/pickel_model.sav", 'rb'))
 # model = cp.load(urlopen("https://butlerunit22.s3.us-east-2.amazonaws.com/pickel_model.sav"))
 
-#loaded_model = cp.load('pickle_model.sav')
 
 with open('pickle_model.sav', mode='rb') as file:
     model = cp.load(file)
