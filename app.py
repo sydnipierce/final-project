@@ -3,11 +3,21 @@ from flask import Flask, render_template, jsonify, request, redirect
 import os
 import numpy as np
 import pandas as pd
-from urllib.request import urlopen
+import urllib.request
+# from urllib.request import urlopen
 import cloudpickle as cp
 
 # from wordcloud import WordCloud
-# methods=["GET", "POST"]
+
+# Downloading the ml model
+url = 'https://butlerunit22.s3.us-east-2.amazonaws.com/pickle_model.sav'
+dir = os.path.dirname(__file__)
+filename = os.path.join(dir, 'pickle_model.sav')
+urllib.request.urlretrieve(url, filename)
+
+with open(filename, mode='rb') as file:
+    model = cp.load(file)
+
 
 app = Flask(__name__)
 # from urllib.request import urlopen
@@ -19,9 +29,6 @@ app = Flask(__name__)
 # model = cp.load(urlopen("https://butlerunit22.s3.us-east-2.amazonaws.com/pickel_model.sav", 'rb'))
 # model = cp.load(urlopen("https://butlerunit22.s3.us-east-2.amazonaws.com/pickel_model.sav"))
 
-
-with open('pickle_model.sav', mode='rb') as file:
-    model = cp.load(file)
 
 @app.route('/')
 def home():
@@ -35,6 +42,7 @@ def submit():
     
     # print(type(loaded_model))
     if request.method == "POST":
+        
         user_input = []
         text_input = request.form["variable"]
         user_input.append(text_input)
@@ -49,7 +57,6 @@ def submit():
 
     return render_template("index.html", results=result)
 
-    # , results=result
 
 if __name__ == "__main__":
     app.run(debug=True)
