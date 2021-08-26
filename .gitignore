@@ -6,6 +6,7 @@ config.py
 # Files exceed 100MB and can't be pushed to a free GitHub account
 class_model.sav
 pickle_model.sav
+pickle_model02.sav
 all_articles.csv
 all_articles_final.csv
 
